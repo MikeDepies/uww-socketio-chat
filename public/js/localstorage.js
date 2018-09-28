@@ -40,7 +40,6 @@ $(function () {
       $('#username-container').hide();
       $('#message-container').show();
       $('#message-container form input').focus();
-
     } else {
       $('#message-container').hide();
       $('#username-container').show();

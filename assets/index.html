@@ -22,13 +22,12 @@
         $.get('http://localhost:3000/messages', function(data, status) {
           data.forEach(appendMessage);
         })
-        // localStorage.setItem("name", "Mike")
         $('form').submit(function(){
           var msg = $('#m').val();
           var payload = {
             msg : msg
           };
-          $.post('http://localhost:3000/message', payload, function(data, status) {
+          $.post('http://localhost:3000/messages', payload, function(data, status) {
             console.log(`message: ${msg} posted`)
             appendMessage(payload)
           });

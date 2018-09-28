@@ -1,7 +1,6 @@
 var app = require('express')();
 var http = require('http').Server(app);
 var bodyParser = require("body-parser");
-var io = require('socket.io')(http);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -15,7 +14,7 @@ app.get('/messages', function(req, res) {
   res.send(messages)
 })
 
-app.post('/message', function(req, res) {
+app.post('/messages', function(req, res) {
   console.log(req.body)
   messages.push(req.body)
   res.end()
